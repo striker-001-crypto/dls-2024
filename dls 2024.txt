@@ -1,0 +1,17 @@
+< !DOCTYPE HTML >
+<html lang="en">
+<head>
+<meta charest="utf-8"/>
+<meta name="viewport"
+content="width=device - width,
+initial - scale= 1 . 0"/>
+<titile>FOOTBAL 2025 </title> 
+<link rel="stylesheet"
+href="style . css" />
+</head>
+<body>
+<canvas id="gamecanvas" width="800"
+height="500"></canvas>
+<script src="game . js"> </script>
+</body>
+</html>

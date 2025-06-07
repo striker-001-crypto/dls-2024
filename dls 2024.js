@@ -1,0 +1,96 @@
+game.js
+
+
+
+const canvas = 
+const canvas = 
+const canvas = 
+const canvas = 
+document.getElementById("gamecanvas")
+;
+const ctx = canvas.getcontex("2d") ;
+
+const player = {
+	x: 100,
+	y: 200,
+	width: 20,
+	height: 20,
+	color: "blue",
+	speed: 4
+};
+
+
+const ball = {
+	x: 300,
+	y: 230,
+	radius: 10,
+	color: "white",
+	dx: 2,
+	dy: 2
+};
+
+
+function drawPlayer() {
+	ctx.fillStyle = player.color;
+	ctx.fillRect(player.x, player.y,
+	player.width, player.height);
+}
+function drawBall() {
+	ctx.beginpath();
+	ctx.arc(ball.x,ball.y,
+	ball.radius, 0, Math.PI*2);
+	ctx.fillStyle = ball.color;
+	ctx.fill();
+	ctx.closepath();
+}
+
+
+function updateball(){
+	ball.x += ball.dx;
+	ball.y += ball.dy
+	
+//bounce off walls
+if (ball.x + ball.radius >
+canvas.width|| ball.radius
+< 0) {
+	ball.dx *= -1
+	
+}
+if (ball.y + ball.radius >
+cancas.height || ball.y - ball.radius
+< 0) {
+	ball.dy *= -1;
+ }
+}
+
+
+function clearcanvas() {
+	
+	ctx.clearrect(0, 0, canvas.width,
+cancas.height);
+}
+
+
+function gameloop() {
+	clearCanvas();
+	drawPlayer();
+	drawBall();
+	updateBall();
+	
+	requestANIMATORFrame(gameloop);
+}
+
+
+// Keyboard controls
+document.addEventListener("keydown" ,
+(e) => {
+	if (e. key === "ArrowUp") player.y
+ -=  player.speed;
+    if (e. key === "ArrowDown") player.y
+ +=  player.speed;
+    if (e.key  === "ArrowLeft") p;ayer.x
+ -=  player.speed;
+    if (e.key  === "ArrowRight")
+		player.x += player.spped;
+        });
+	gameloop();
